@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <container class="container">
+        <button type="button" class="add_todo" onclick="openModal()"></button>
+        <div name="todo_form" class="todo_form">
+            <textarea type="text" name="todo_name" class="todo_name input" placeholder="Title"></textarea>
+            <textarea type="text" name="todo_description" class="todo_description input"></textarea>
+            <button type="submit" class="save">Save</button>
+            <button type="button" class="cancel">Cancel</button>
+        </div>
+        <div class="todos" onclick="e=>showTodos(e)">
+        </div>
+    </container>
+
+    <script src="./index.js" type="module"></script>
+    <script src="./openModal.js"></script>
+</body>
+</html>
