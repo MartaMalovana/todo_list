@@ -89,3 +89,7 @@
     top: 50%;
     transform: translate(0, -50%);
 }
+
+.checkbox:checked + .card_name {
+    text-decoration: line-through;
+}

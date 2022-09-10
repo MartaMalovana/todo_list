@@ -9,18 +9,18 @@
 </head>
 <body>
     <container class="container">
-        <button type="button" class="add_todo" onclick="openModal()"></button>
+        <button type="button" class="add_todo"></button>
         <div name="todo_form" class="todo_form">
             <textarea type="text" name="todo_name" class="todo_name input" placeholder="Title"></textarea>
             <textarea type="text" name="todo_description" class="todo_description input"></textarea>
             <button type="submit" class="save">Save</button>
             <button type="button" class="cancel">Cancel</button>
         </div>
-        <div class="todos" onclick="e=>showTodos(e)">
+        <div class="todos">
         </div>
     </container>
 
     <script src="./index.js" type="module"></script>
-    <script src="./openModal.js"></script>
+    <!-- <script src="./openModal.js" type="module"></script> -->
 </body>
 </html>
