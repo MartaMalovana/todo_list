@@ -12,14 +12,16 @@ export default function openTodo (e) {
     const selectedTodo = allTodos.find(todo => todo.id.toString() === selectedCard.id);
     openModal(selectedTodo);
 
-    deleteButton.style.display = 'block';
-    deleteButton.addEventListener('click', () => {
-        if(!confirm("Do You really want to delete this?")) {
+    const deleteCard = () => {
+            deleteButton.removeEventListener('click', deleteCard);
+            const indexInArray = allTodos.indexOf(selectedTodo);
+            allTodos.splice(indexInArray, 1);
+            document.getElementById(`${selectedCard.id}`).remove();
+            closeForm();
+            console.log(551);
             return;
-        };
-        document.getElementById(`${selectedCard.id}`).remove();
-        const indexInArray = allTodos.indexOf(selectedTodo);
-        allTodos.splice(indexInArray, 1);
-        closeForm();
-    })
+    };
+
+    deleteButton.style.display = 'block';
+    deleteButton.addEventListener('click', deleteCard);
 }
