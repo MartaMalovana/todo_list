@@ -2,9 +2,14 @@
     width: 365px;
     height: 100vh;
     display: block;
-    border: 1px solid red;
     margin-right: auto;
     margin-left: auto;
+}
+
+@media screen and (min-width: 765px) {
+   .container {
+    width: 765px;
+   }
 }
 
 .add_todo {
@@ -14,6 +19,15 @@
     margin-left: auto;
     display: block;
     margin-top: 10px;
+    background-color: inherit;
+    border: none;
+}
+
+.icon {
+    /* background-color: inherit; */
+    width: 30px;
+    height: 30px;
+    background-size: contain;
 }
 
 .todo_form {
@@ -21,8 +35,8 @@
     display: none;
     flex-direction: column;
     margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
     height: 100vh;
 }
 
@@ -37,6 +51,7 @@
     border-radius: 5px;
     height: 51px;
     position: relative;
+    background-color: white;
 }
 
 .card_name {
@@ -65,14 +80,16 @@
 }
 
 .todo_description {
-    height: 100%;
+    height: 62%;
 }
 
 .save,
 .cancel {
     width: 60px;
     position: absolute;
-    bottom: 20px;
+    bottom: 70px;
+    background-color: inherit;
+    border: none;
 }
 
 .save {
@@ -81,6 +98,7 @@
 
 .cancel {
     left: 10px;
+    stroke: black;
 }
 
 .checkbox {
@@ -92,4 +110,34 @@
 
 .checkbox:checked + .card_name {
     text-decoration: line-through;
+}
+
+.delete_todo {
+    display: none;
+    position: absolute;
+    right: 50%;
+    bottom: 70px;
+    transform: translate(50%, 0);
+    background-color: inherit;
+    border: none;
+    fill: black;
+}
+
+.yellow_blue {
+    border-radius: 50%;
+    border-width: 0px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: inherit;
+
+}
+
+.ua_color {
+    background-image: linear-gradient(to bottom, #c3def7, #fff899); 
+}
+
+.white_color {
+    background-color: white;
 }
