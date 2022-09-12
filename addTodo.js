@@ -8,7 +8,7 @@ const saveButton = document.querySelector('.save');
 const inputName = document.querySelector('.todo_name');
 const inputDescription = document.querySelector('.todo_description');
 
-export default function addTodo (e, id) {
+export default function addTodo (e) {
     e.preventDefault();
     // creates card for new todo
     const card = document.createElement('div');
@@ -50,7 +50,8 @@ export default function addTodo (e, id) {
     allTodos.push(newTodo);
     
     card.addEventListener('click', e=>openTodo(e));
-
-    closeForm();
     saveButton.removeEventListener('click', addTodo);
+    console.log(44, allTodos);
+    closeForm();
+
 }
