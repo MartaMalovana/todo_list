@@ -1,9 +1,6 @@
 import openModal from './openModal.js';
-import openTodo from './openTodo.js';
-import { allTodos } from './allTodos.js';
 
 const modalButton = document.querySelector('.add_todo');
-const card = document.querySelector('.card');
 const changeColor = document.querySelector('.yellow_blue');
 const container = document.querySelector('.container');
 

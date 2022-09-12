@@ -9,8 +9,7 @@ export default function openTodo (e) {
         return;
     };
     const selectedCard = e.currentTarget;
-    const selectedTodo = allTodos.find(({id})=> id === selectedCard.id);
-
+    const selectedTodo = allTodos.find(todo => todo.id.toString() === selectedCard.id);
     openModal(selectedTodo);
 
     deleteButton.style.display = 'block';
@@ -18,7 +17,7 @@ export default function openTodo (e) {
         if(!confirm("Do You really want to delete this?")) {
             return;
         };
-        document.querySelector(`#${selectedCard.id}`).remove();
+        document.getElementById(`${selectedCard.id}`).remove();
         const indexInArray = allTodos.indexOf(selectedTodo);
         allTodos.splice(indexInArray, 1);
         closeForm();

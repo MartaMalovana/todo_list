@@ -1,4 +1,3 @@
-import { nanoid } from './node_modules/nanoid/nanoid.js';
 import closeForm from "./closeForm.js";
 import openTodo from './openTodo.js';
 import { allTodos } from './allTodos.js';
@@ -14,7 +13,7 @@ export default function addTodo (e) {
     const card = document.createElement('div');
     card.classList.add('card');
     //creates id
-    const newId = nanoid();
+    const newId = Math.round(Math.random()*1000).toString();
     card.id = newId;
     // creates p for new todo's title
     const cardName = document.createElement('p');
@@ -51,7 +50,6 @@ export default function addTodo (e) {
     
     card.addEventListener('click', e=>openTodo(e));
     saveButton.removeEventListener('click', addTodo);
-    console.log(44, allTodos);
     closeForm();
 
 }

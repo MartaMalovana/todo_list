@@ -14,28 +14,23 @@ export default function openModal ({id, name, description}) {
     form.style.display = 'flex';
     // hide button that opens modal
     modalButton.style.display = 'none';
-    
     if(id) {
         textareaName.value = name;
         textareaDescription.value = description;
-        const selectedItemById = document.querySelector(`#${id}`);
+        const selectedItemById = document.getElementById(`${id}`);
         const selectedName = selectedItemById.querySelector('.card_name');
         const selectedDescription = selectedItemById.querySelector('.card_description');
         const saveChanges = () => {
             selectedName.textContent = textareaName.value;
             selectedDescription.textContent = textareaDescription.value;
             const todoInArray = allTodos.find(todo => todo.id === id);
-            console.log(todoInArray);
             todoInArray.name = textareaName.value;
             todoInArray.description = textareaDescription.value;
-            console.log(todoInArray);
             saveButton.removeEventListener('click', saveChanges);
             closeForm();
         };
         saveButton.addEventListener('click', saveChanges);
-        // saveButton.removeEventListener('click', saveChanges);
     } else {
-        console.log(11);
         saveButton.addEventListener('click', addTodo);
     };
     cancelButton.addEventListener('click', closeForm);
