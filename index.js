@@ -3,15 +3,16 @@ import openModal from './openModal.js';
 const modalButton = document.querySelector('.add_todo');
 const changeColor = document.querySelector('.yellow_blue');
 const container = document.querySelector('.container');
+const body = document.querySelector('body');
 
 function showTodos () {
     changeColor.addEventListener('click', () => {
-        if(!container.classList.contains('ua_color')) {
-            container.classList.remove('white_color');
-            container.classList.add('ua_color');
+        if(!body.classList.contains('ua_color')) {
+            body.classList.remove('white_color');
+            body.classList.add('ua_color');
         } else {
-            container.classList.remove('ua_color');
-            container.classList.add('white_color');
+            body.classList.remove('ua_color');
+            body.classList.add('white_color');
         };
     });
     modalButton.addEventListener('click', openModal);

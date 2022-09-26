@@ -16,6 +16,14 @@
             <svg class="icon"> <use href="./icons.svg#add"></use></svg>
         </button>
         <div name="todo_form" class="todo_form">
+            <div class="category">
+                <label for="category" class="category_label"> Category</label>
+                <select id="category" name="category">
+                    <option value="task">Task</option>
+                    <option value="random_thought">Random Thought</option>
+                    <option value="idea">Idea</option>
+                </select>
+            </div>            
             <textarea type="text" name="todo_name" class="todo_name input" placeholder="Title"></textarea>
             <textarea type="text" name="todo_description" class="todo_description input"></textarea>
             <button type="button" class="save">

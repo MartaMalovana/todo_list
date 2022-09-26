@@ -1,6 +1,10 @@
+html, body {
+    height: 100%;
+}
+
 .container {
     width: 365px;
-    height: 100vh;
+    height: 100%;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -23,10 +27,18 @@
     border: none;
 }
 
-.icon {
+.icon,
+.cat_icon {
     width: 30px;
     height: 30px;
     background-size: contain;
+    stroke: black;
+}
+
+.cat_icon {
+    fill: white;
+    stroke: white;
+    padding: 3px;
 }
 
 .todo_form {
@@ -43,39 +55,70 @@
     margin-bottom: 10px;
 }
 
+.category {
+    display: flex;
+}
+
+#category {
+    margin-bottom: 15px;
+}
+
+.category_label {
+    margin-right: 10px;
+}
+
+.cat_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: grey;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .card {
+    display: flex;
+    align-items: center;
     margin: 10px;
-    padding: 3px 25px 3px 3px;
-    border: 1px solid black;
+    padding: 3px 25px 3px 10px;
+    /* border: 1px solid black; */
     border-radius: 5px;
-    height: 51px;
+    height: 66px;
     position: relative;
-    background-color: white;
+    background-color: 	#e5e6eb;
+    /* font-size: 24px; */
 }
 
 .card_name {
-    margin: 0;
+    font-size: 24px;
+    margin-right: 10px;
+    /* margin: 0; */
     font-weight: bold;
     min-width: 18px;
-    height: 18px;
+    /* height: 24px; */
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card_description {
-    margin: 0;
+    /* margin: 3px 0; */
     min-width: 18px;
+    margin-right: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 18px;
+    /* height: 18px; */
     white-space: nowrap;
+    font-size: 24px;
 }
 
 .card_time {
-    margin: 0;
-    font-size: 10px;
-    color: grey;
-    position: absolute;
-    bottom: 3px;
+    font-size: 24px;
+    margin-right: 10px;
+
+    /* color: grey; */
+    /* position: absolute; */
+    /* bottom: 3px; */
 }
 
 .todo_description {
@@ -130,10 +173,11 @@
     margin-left: 10px;
     margin-top: 10px;
     background-color: inherit;
+    padding: 5px 0;
 }
 
 .ua_color {
-    background-image: linear-gradient(to bottom, #c3def7, #fff899); 
+    background: linear-gradient(to bottom, #c3def7, #fff899) no-repeat; 
 }
 
 .white_color {
