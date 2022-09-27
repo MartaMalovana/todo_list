@@ -9,12 +9,17 @@
 </head>
 <body>
     <container class="container">
-        <button class="yellow_blue">
-            <svg class="icon"> <use href="./icons.svg#paint"></use></svg> 
-        </button>
-        <button type="button" class="add_todo">
-            <svg class="icon"> <use href="./icons.svg#add"></use></svg>
-        </button>
+        <div class="top_buttons">
+            <button class="yellow_blue">
+                <svg class="icon"> <use href="./icons.svg#paint"></use></svg> 
+            </button>
+            <button class="archived" type="button">
+                <svg class="icon"> <use href="./icons.svg#archive"></use></svg>     
+            </button>
+            <button class="return" type="button">
+                <svg class="icon"> <use href="./icons.svg#return"></use></svg>     
+            </button>
+        </div>
         <div name="todo_form" class="todo_form">
             <div class="category">
                 <label for="category" class="category_label"> Category</label>
@@ -36,8 +41,12 @@
                 <svg class="icon"> <use href="./icons.svg#delete"></use></svg>
             </button>
         </div>
-        <div class="todos">
-        </div>
+        <div class="todos"></div>
+        <div class="archived_container"></div>
+        <button type="button" class="add_todo">
+            Create Note
+        </button>
+
     </container>
 
     <script src="./index.js" type="module"></script>

@@ -1,6 +1,7 @@
 import closeForm from "./closeForm.js";
 import openTodo from './openTodo.js';
 import { allTodos } from './allTodos.js';
+import showCategory from "./showCategory.js";
 
 const todos = document.querySelector('.todos');
 const saveButton = document.querySelector('.save');
@@ -29,48 +30,39 @@ export default function addTodo (e) {
     cardTime.classList.add('card_time');
     const todoTime = `${new Date().toLocaleString('en-US', {month: "long"})} ${new Date().getDate()}, ${new Date().getFullYear()}`;
     cardTime.textContent = todoTime;
-    // creates checkbox 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('checkbox');
     //creates category
     const cat = document.createElement('p');
     cat.classList.add('card_category');
     let cat_text = null;
     let icon_name = null;
-    const showCategory = () => {
-        switch(category.value) {
-            case 'task': 
-                cat_text = 'Task';
-                icon_name = "task";
-                break;
-            case 'random_thought': 
-                cat_text = 'Random Thought';
-                icon_name = "thought";
-                break;
-            case 'idea': 
-                cat_text = 'Idea';
-                icon_name = "idea";
-                break;
-            default:
-                cat_text = 'Task';
-                icon_name = "task";
-                break;
-        };
-    };
-    showCategory();
-    cat.textContent = cat_text;
+    const result = showCategory(category.value);
+    cat.textContent = result.cat_text;
     // creates category icon
     const cat_icon = document.createElement('span');
-    cat_icon.classList.add('cat_icon');
-    cat_icon.innerHTML = `<svg class="cat_icon"><use href="./icons.svg#${icon_name}"></use></svg>`;
+    cat_icon.classList.add('category_icon');
+    cat_icon.innerHTML = `<svg class="cat_icon"><use href="./icons.svg#${result.icon_name}"></use></svg>`;
+    // Dates from description
+    const reg = /[0-9]{1,2}[\/]{1}[0-9]{1,2}[\/]{1}[0-9]{4}/g;
+    const datesInDescription = inputDescription.value.match(reg);
+    const dates = document.createElement('p');
+    dates.classList.add('dates');
+    dates.textContent = datesInDescription ? datesInDescription.join(', ') : null;
+    // add div for buttons
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button_container');
+    // add button "change"
+    const change = document.createElement('button');
+    change.type = 'button';
+    change.classList.add('change');
+    change.innerHTML = `<svg class="icon"><use id='change' href="./icons.svg#change"></use></svg>`;
+    // add button archive
+    const archive = document.createElement('button');
+    change.type = 'button';
+    archive.classList.add('archive');
+    archive.innerHTML = `<svg class="icon"><use id='archive' href="./icons.svg#archive"></use></svg>`;
     // add card to DOM
-    card.append(checkbox);
-    card.append(cat_icon);
-    card.append(cardName);
-    card.append(cardTime);
-    card.append(cat);
-    card.append(cardDescription);
+    buttonContainer.append(change, archive);
+    card.append(cat_icon, cardName, cardTime, cat, cardDescription, dates, buttonContainer);
     todos.prepend(card);
     // add todo as object to allTodos
     const newTodo = {
@@ -79,11 +71,13 @@ export default function addTodo (e) {
         description: inputDescription.value,
         time: todoTime,
         checked: false,
-        category: category.value
+        category: category.value,
+        dates: datesInDescription,
+        archived: false
     };
     allTodos.push(newTodo);
 
-    card.addEventListener('click', openTodo);
+    buttonContainer.addEventListener('click', openTodo);
     saveButton.removeEventListener('click', addTodo);
     closeForm();
     

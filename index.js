@@ -1,21 +1,15 @@
 import openModal from './openModal.js';
+import changeColor from './changeColor.js';
+import openArchived from './openArchived.js';
 
 const modalButton = document.querySelector('.add_todo');
-const changeColor = document.querySelector('.yellow_blue');
-const container = document.querySelector('.container');
-const body = document.querySelector('body');
+const changeColorButton = document.querySelector('.yellow_blue');
+const archivedButton = document.querySelector('.archived');
 
 function showTodos () {
-    changeColor.addEventListener('click', () => {
-        if(!body.classList.contains('ua_color')) {
-            body.classList.remove('white_color');
-            body.classList.add('ua_color');
-        } else {
-            body.classList.remove('ua_color');
-            body.classList.add('white_color');
-        };
-    });
+    changeColorButton.addEventListener('click', changeColor);
     modalButton.addEventListener('click', openModal);
+    archivedButton.addEventListener('click', openArchived);
 };
 
 showTodos();

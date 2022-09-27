@@ -2,6 +2,9 @@ html, body {
     height: 100%;
 }
 
+p {
+    margin: 0 0;
+}
 .container {
     width: 365px;
     height: 100%;
@@ -9,30 +12,47 @@ html, body {
     margin-right: auto;
     margin-left: auto;
 }
-
-@media screen and (min-width: 765px) {
-   .container {
-    width: 765px;
-   }
+.top_buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
 }
-
 .add_todo {
-    width: 30px;
+    /* width: 30px;
     height: 30px;
-    margin-right: auto;
+    margin-right: auto; */
     margin-left: auto;
     display: block;
     margin-top: 10px;
-    background-color: inherit;
-    border: none;
+    margin-right: 10px;
+    background-color: #e5e6eb;
+    /* border: none; */
+    border-radius: 5px;
+    /* border-style: none; */
+    border: 1px solid black;
 }
 
-.icon,
-.cat_icon {
+.archived {
+    /* display: block; */
     width: 30px;
     height: 30px;
-    background-size: contain;
-    stroke: black;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    margin-left: auto;
+}
+.icon,
+.cat_icon {
+    display: flex;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* background-size: contain; */
+    stroke: gray;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .cat_icon {
@@ -67,60 +87,112 @@ html, body {
     margin-right: 10px;
 }
 
+.category_icon {
+    /* margin-right: 15px; */
+}
+
 .cat_icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: grey;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .card {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 10px;
-    padding: 3px 25px 3px 10px;
+    padding: 10px;
     /* border: 1px solid black; */
     border-radius: 5px;
-    height: 66px;
+    /* height: 66px; */
     position: relative;
     background-color: 	#e5e6eb;
     /* font-size: 24px; */
 }
 
 .card_name {
+    text-align: center;
     font-size: 24px;
-    margin-right: 10px;
-    /* margin: 0; */
     font-weight: bold;
-    min-width: 18px;
-    /* height: 24px; */
+    width: 100%;
+    /* margin: 0; */
+    /* font-weight: bold; */
+    /* width: 110px; */
+    max-height: 54px;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 10px 0;
 }
 
 .card_description {
+    width: 100%;
     /* margin: 3px 0; */
-    min-width: 18px;
-    margin-right: 10px;
+    /* width: 110px; */
     overflow: hidden;
     text-overflow: ellipsis;
     /* height: 18px; */
     white-space: nowrap;
-    font-size: 24px;
+    font-size: 18px;
+    color: #6e6d6d;
 }
 
 .card_time {
-    font-size: 24px;
-    margin-right: 10px;
+    width: 100%;
 
+    font-size: 18px;
+    /* margin-right: 15px; */
+    color: #6e6d6d;
+    /* width: 80px; */
     /* color: grey; */
     /* position: absolute; */
     /* bottom: 3px; */
 }
 
+.card_category {
+    /* text-align: center; */
+    width: 100%;
+    /* margin-right: 15px; */
+    font-size: 18px;
+    color: #6e6d6d;
+    /* width: 80px; */
+}
+
+.dates {
+    width: 100%;
+
+    font-size: 18px;
+    color: #6e6d6d;
+    /* text-align: center; */
+    /* margin-right: 15px; */
+    /* width: 80px; */
+}
+
+.button_container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.change,
+.archive,
+.unarchive,
+.return {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: inherit;
+    fill: #6e6d6d;
+    stroke: #6e6d6d;
+}
+
+.return {
+    display: none;
+    width: 30px;
+}
 .todo_description {
     height: 62%;
 }
@@ -136,18 +208,17 @@ html, body {
 
 .save {
     right: 10px;
+    width: 40px;
+    height: 40px;
+
 }
 
 .cancel {
     left: 10px;
     stroke: black;
-}
+    width: 40px;
+    height: 40px;
 
-.checkbox {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translate(0, -50%);
 }
 
 .checkbox:checked + .card_name {
@@ -163,6 +234,8 @@ html, body {
     background-color: inherit;
     border: none;
     fill: black;
+    width: 40px;
+    height: 40px;
 }
 
 .yellow_blue {
@@ -170,10 +243,10 @@ html, body {
     border-width: 0px;
     width: 30px;
     height: 30px;
-    margin-left: 10px;
-    margin-top: 10px;
+    /* margin-left: 10px;
+    margin-top: 10px; */
     background-color: inherit;
-    padding: 5px 0;
+    padding: 0;
 }
 
 .ua_color {
@@ -183,3 +256,72 @@ html, body {
 .white_color {
     background-color: white;
 }
+
+@media screen and (min-width: 765px) {
+    .container {
+     width: 765px;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .card_name {
+        width: 110px;
+        font-size: 16px;
+        text-align: start;
+        margin: 10px 15px 10px 0;
+
+    }
+    .card_time {
+        width: 80px;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .card_category {
+        width: 80px;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .card_description {
+        width: 110px;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .dates {
+        width: 80px;
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .category_icon {
+        margin-right: 15px;
+    }
+    
+ }
+ 
+ @media screen and (min-width: 1200px) {
+    .container {
+     width: 1200px;
+    }
+    .card {
+        flex-direction: row;
+    }
+    .card_name {
+        width: 180px;
+        font-size: 18px;
+    }
+    .card_time {
+        width: 180px;
+        font-size: 18px;
+    }
+    .card_category {
+        width: 180px;
+        font-size: 18px;
+    }
+    .card_description {
+        width: 180px;
+        font-size: 18px;
+    }
+    .dates {
+        width: 180px;
+        font-size: 18px;
+    }
+ }
