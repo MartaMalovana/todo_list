@@ -1,8 +1,8 @@
 import { allTodos } from './allTodos.js';
-import showCategory from './showCategory.js';
-import unarchiveCard from './unarchiveCard.js';
 import createTodo from './createTodo.js';
 import openTodo from './openTodo.js';
+import createButtons from './createButtons.js';
+import createCounter from "./createCounter.js";
 
 const todos = document.querySelector('.todos');
 const archived = document.querySelector('.archived_container');
@@ -16,7 +16,6 @@ export default function openArchived () {
     buttonArchived.style.display = 'none';
     createCardButton.style.display = 'none';
     returnButton.style.display = 'block';
-    const archivedList = document.querySelector('.archTodos');
     const archivedTodos = allTodos.filter(todo => todo.archived === true);
     todos.style.display = 'none';
     const archivedInDom = document.createElement('div');
@@ -37,21 +36,12 @@ export default function openArchived () {
         unarchiveButton.addEventListener('click', () => {
             const selectedTodo = allTodos.find(el => el.id === todo.id);
             selectedTodo.archived = false;
+            createCounter();
             const selectedTodoDom = document.getElementById(`${todo.id}`);
             selectedTodoDom.remove();
             const returnedTodo = createTodo(selectedTodo);
             
-            const buttonContainer = document.createElement('div');
-            buttonContainer.classList.add('button_container');
-            const change = document.createElement('button');
-            change.type = 'button';
-            change.classList.add('change');
-            change.innerHTML = `<svg class="icon"><use id='change' href="./icons.svg#change"></use></svg>`;
-            const archive = document.createElement('button');
-            change.type = 'button';
-            archive.classList.add('archive');
-            archive.innerHTML = `<svg class="icon"><use id='archive' href="./icons.svg#archive"></use></svg>`;
-            buttonContainer.append(change, archive);
+            const buttonContainer = createButtons();
             buttonContainer.addEventListener('click', openTodo);
             returnedTodo.append(buttonContainer);
             todos.append(returnedTodo);
@@ -63,7 +53,6 @@ export default function openArchived () {
             returnButton.style.display = 'none';
             buttonArchived.style.display = 'block';
             createCardButton.style.display = 'block';
-            // archived.innerHTML = '';
         })
     });
     

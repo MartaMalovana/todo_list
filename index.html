@@ -20,6 +20,7 @@
                 <svg class="icon"> <use href="./icons.svg#return"></use></svg>     
             </button>
         </div>
+
         <div name="todo_form" class="todo_form">
             <div class="category">
                 <label for="category" class="category_label"> Category</label>
@@ -41,12 +42,67 @@
                 <svg class="icon"> <use href="./icons.svg#delete"></use></svg>
             </button>
         </div>
+
+        <div class="titles">
+            <p class="title_name">Name</p>
+            <p class="title_created">Created</p>
+            <p class="title_category">Category</p>
+            <p class="title_content">Content</p>
+            <p class="title_dates">Dates</p>
+        </div>
         <div class="todos"></div>
         <div class="archived_container"></div>
         <button type="button" class="add_todo">
             Create Note
         </button>
 
+        <div class="titles counter">
+            <p class="title_notecategory">Note Category</p>
+            <p class="title_active">Active</p>
+            <p class="title_archived">Archived</p>
+        </div>
+        <div class="card">
+            <span class="category_icon">
+                <svg class="cat_icon"><use href="./icons.svg#task"></use></svg>
+            </span>
+            <p class="counter_name">Task</p>
+            <div class="mob">
+                <span class="mob_title">Active: </span>
+                <p class="counter_active act_task">0</p>
+            </div>
+            <div class="mob">
+                <span class="mob_title">Archived: </span>
+                <p class="counter_archived arch_task">0</p>
+            </div>
+        </div>
+        <div class="card">
+            <span class="category_icon">
+                <svg class="cat_icon"><use href="./icons.svg#thought"></use></svg>
+            </span>
+            <p class="counter_name">Random Thought</p>
+            <div class="mob">
+                <span class="mob_title">Active: </span>
+                <p class="counter_active act_random">0</p>    
+            </div>
+            <div class="mob">
+                <span class="mob_title">Archived: </span>
+                <p class="counter_archived arch_random">0</p>
+            </div>
+        </div>
+        <div class="card">
+            <span class="category_icon">
+                <svg class="cat_icon"><use href="./icons.svg#idea"></use></svg>
+            </span>
+            <p class="counter_name">Idea</p>
+            <div class="mob">
+                <span class="mob_title">Active: </span>
+                <p class="counter_active act_idea">0</p>
+            </div>
+            <div class="mob">
+                <span class="mob_title">Archived: </span>
+                <p class="counter_archived arch_idea">0</p>
+            </div>  
+        </div>
     </container>
 
     <script src="./index.js" type="module"></script>

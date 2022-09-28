@@ -1,6 +1,6 @@
 import showCategory from "./showCategory.js";
 
-export default function createTodo ({id, name, description, time, category, dates, unarchive}) {
+export default function createTodo ({id, name, description, time, category, dates}) {
     const result = showCategory(category);
 
     const card = document.createElement('div');

@@ -3,6 +3,7 @@ const inputDescription = document.querySelector('.todo_description');
 const form = document.querySelector('.todo_form');
 const cancelButton = document.querySelector('.cancel');
 const modalButton = document.querySelector('.add_todo');
+const archived = document.querySelector('.archived');
 
 export default function closeForm () {
     inputName.value = '';
@@ -10,4 +11,6 @@ export default function closeForm () {
     form.style.display = 'none';
     modalButton.style.display = 'block';
     cancelButton.removeEventListener('click', closeForm);
+    archived.style.display = 'block';
+
 }

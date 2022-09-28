@@ -2,6 +2,7 @@ import addTodo from "./addTodo.js";
 import closeForm from "./closeForm.js";
 import { allTodos } from "./allTodos.js";
 import showCategory from "./showCategory.js";
+import createCounter from "./createCounter.js";
 
 const saveButton = document.querySelector('.save');
 const form = document.querySelector('.todo_form');
@@ -11,6 +12,7 @@ const textareaName = document.querySelector('.todo_name');
 const textareaDescription = document.querySelector('.todo_description');
 const deleteButton = document.querySelector('.delete_todo');
 const categ = document.querySelector('#category');
+const archived = document.querySelector('.archived');
 
 export default function openModal ({id, name, description, category}) {
     deleteButton.style.display = 'block';
@@ -18,6 +20,7 @@ export default function openModal ({id, name, description, category}) {
     form.style.display = 'flex';
     // hide button that opens modal
     modalButton.style.display = 'none';
+    archived.style.display = 'none';
     if(id) {
         categ.value = category;
         textareaName.value = name;
@@ -50,6 +53,7 @@ export default function openModal ({id, name, description, category}) {
             selectedItemById.remove();
             const indexInArray = allTodos.indexOf(todoInArray);
             allTodos.splice(indexInArray, 1);
+            createCounter();
             deleteButton.removeEventListener('click', deleteCard);
             closeForm();
         };
