@@ -85,7 +85,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     padding: 10px;
     border-radius: 5px;
     background-color: 	#e5e6eb;
@@ -124,17 +124,30 @@ p {
 .unarchive,
 .return,
 .delete  {
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: inherit;
+    width: 30px;
+    height: 30px;
     fill: #6e6d6d;
     stroke: #6e6d6d;
+}
+.change {
+    width: 23px;
+    height: 23px;
+}
+.delete {
+    width: 28px;
+    height: 28px;
+
+}
+.button {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0 2px;
 }
 .return {
     display: none;
     width: 30px;
+    margin-right: 3px;
 }
 .delete {
     width: 30px;
@@ -223,6 +236,12 @@ p {
     display: flex;
     align-items: flex-start;
 }
+.statistics {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    justify-content: center;
+}    
 @media screen and (min-width: 765px) {
     .container {
      width: 765px;
@@ -272,6 +291,14 @@ p {
     .title_notecategory {
         width: 280px;
     }
+    .button_container {
+        margin-left: auto;
+    }
+    .statistics {
+        margin-top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+    }    
  }
  
  @media screen and (min-width: 1200px) {

@@ -26,8 +26,8 @@ export default function openArchived () {
         const archivedTodo = createTodo(todo);
         const unarchiveButton = document.createElement('button');
         unarchiveButton.type = 'button';
-        unarchiveButton.classList.add('unarchive');
-        unarchiveButton.innerHTML = `<svg class="icon"><use id='unarchive' href="./icons.svg#unarchive"></use></svg>`;
+        unarchiveButton.classList.add('button');
+        unarchiveButton.innerHTML = `<svg class="icon unarchive"><use id='unarchive' href="./icons.svg#unarchive"></use></svg>`;
         archivedTodo.append(unarchiveButton);
         archivedInDom.append(archivedTodo);
         archived.append(archivedInDom);
