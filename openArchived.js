@@ -19,6 +19,7 @@ export default function openArchived () {
     todos.style.display = 'none';
     const archivedInDom = document.createElement('div');
     archivedInDom.classList.add('archTodos');
+    
     archivedTodos.map(todo => {
         if(document.getElementById(`${todo.id}`)) {
             return;
@@ -48,14 +49,16 @@ export default function openArchived () {
             todos.append(returnedTodo);
 
         });
-        returnButton.addEventListener('click', () => {
+    });
+    returnButton.addEventListener('click', (e) => {
+        try {
             todos.style.display = 'block';
             archived.style.display = 'none';
             returnButton.style.display = 'none';
             buttonArchived.style.display = 'block';
-            createCardButton.style.display = 'block';
-        })
+            createCardButton.style.display = 'block';    
+        } catch (error) {
+            console.log(error);
+        };
     });
-    
-
 };
