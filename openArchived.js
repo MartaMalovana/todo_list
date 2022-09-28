@@ -1,4 +1,4 @@
-import { allTodos } from './allTodos.js';
+import allTodos from './allTodos.js';
 import createTodo from './createTodo.js';
 import openTodo from './openTodo.js';
 import createButtons from './createButtons.js';
@@ -11,7 +11,6 @@ const createCardButton = document.querySelector('.add_todo');
 const returnButton = document.querySelector('.return');
 
 export default function openArchived () {
-    console.log(allTodos);
     archived.style.display = 'block';
     buttonArchived.style.display = 'none';
     createCardButton.style.display = 'none';
@@ -37,6 +36,8 @@ export default function openArchived () {
             const selectedTodo = allTodos.find(el => el.id === todo.id);
             selectedTodo.archived = false;
             createCounter();
+            localStorage.setItem('todos', JSON.stringify(allTodos));
+
             const selectedTodoDom = document.getElementById(`${todo.id}`);
             selectedTodoDom.remove();
             const returnedTodo = createTodo(selectedTodo);

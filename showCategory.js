@@ -1,6 +1,7 @@
 export default function showCategory (value) {
     let cat_text;
     let icon_name;
+    
     switch(value) {
         case 'task': 
             cat_text = 'Task';

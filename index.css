@@ -1,14 +1,13 @@
 html, body {
     height: 100%;
 }
-
 p {
-    margin: 0 0;
+    margin: 0;
 }
 .container {
+    display: block;
     width: 365px;
     height: 100%;
-    display: block;
     margin-right: auto;
     margin-left: auto;
 }
@@ -18,22 +17,15 @@ p {
     margin: 20px 10px;
 }
 .add_todo {
-    /* width: 30px;
-    height: 30px;
-    margin-right: auto; */
-    margin-left: auto;
     display: block;
+    margin-left: auto;
     margin-top: 10px;
     margin-right: 10px;
     background-color: #e5e6eb;
-    /* border: none; */
     border-radius: 5px;
-    /* border-style: none; */
     border: 1px solid black;
 }
-
 .archived {
-    /* display: block; */
     width: 30px;
     height: 30px;
     padding: 0;
@@ -48,16 +40,15 @@ p {
     padding: 0;
     width: 100%;
     height: 100%;
-    /* background-size: contain; */
     stroke: gray;
-}
+    object-position: top left;
 
+}
 .cat_icon {
     fill: white;
     stroke: white;
     padding: 3px;
 }
-
 .todo_form {
     position: relative;
     display: none;
@@ -68,112 +59,66 @@ p {
     padding: 5px;
     height: 100vh;
 }
-
 .input {
     margin-bottom: 10px;
 }
-
 .category {
     display: flex;
 }
-
 #category {
     margin-bottom: 15px;
 }
-
 .category_label {
     margin-right: 10px;
 }
-
-.category_icon {
-    /* margin-right: 15px; */
-}
-
 .cat_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: grey;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px;
     padding: 10px;
-    /* border: 1px solid black; */
     border-radius: 5px;
-    /* height: 66px; */
-    position: relative;
     background-color: 	#e5e6eb;
-    /* font-size: 24px; */
 }
-
 .card_name {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     width: 100%;
-    /* margin: 0; */
-    /* font-weight: bold; */
-    /* width: 110px; */
     max-height: 54px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 10px 0;
 }
-
 .card_description {
     width: 100%;
-    /* margin: 3px 0; */
-    /* width: 110px; */
     overflow: hidden;
     text-overflow: ellipsis;
-    /* height: 18px; */
     white-space: nowrap;
     font-size: 18px;
     color: #6e6d6d;
 }
-
-.card_time {
-    width: 100%;
-
-    font-size: 18px;
-    /* margin-right: 15px; */
-    color: #6e6d6d;
-    /* width: 80px; */
-    /* color: grey; */
-    /* position: absolute; */
-    /* bottom: 3px; */
-}
-
-.card_category {
-    /* text-align: center; */
-    width: 100%;
-    /* margin-right: 15px; */
-    font-size: 18px;
-    color: #6e6d6d;
-    /* width: 80px; */
-}
-
+.card_time,
+.card_category,
 .dates {
     width: 100%;
-
     font-size: 18px;
     color: #6e6d6d;
-    /* text-align: center; */
-    /* margin-right: 15px; */
-    /* width: 80px; */
 }
-
 .button_container {
     display: flex;
     margin-top: 10px;
 }
-
 .change,
 .archive,
 .unarchive,
@@ -187,52 +132,43 @@ p {
     fill: #6e6d6d;
     stroke: #6e6d6d;
 }
-
 .return {
     display: none;
     width: 30px;
 }
-
 .delete {
     width: 30px;
 }
 .todo_description {
     height: 62%;
 }
-
 .save,
 .cancel {
     width: 60px;
     position: absolute;
-    bottom: 70px;
+    bottom: 100px;
     background-color: inherit;
     border: none;
 }
-
 .save {
     right: 10px;
     width: 40px;
     height: 40px;
-
 }
-
 .cancel {
     left: 10px;
     stroke: black;
     width: 40px;
     height: 40px;
-
 }
-
 .checkbox:checked + .card_name {
     text-decoration: line-through;
 }
-
 .delete_todo {
     display: none;
     position: absolute;
     right: 50%;
-    bottom: 70px;
+    bottom: 100px;
     transform: translate(50%, 0);
     background-color: inherit;
     border: none;
@@ -240,26 +176,20 @@ p {
     width: 40px;
     height: 40px;
 }
-
 .yellow_blue {
     border-radius: 50%;
     border-width: 0px;
     width: 30px;
     height: 30px;
-    /* margin-left: 10px;
-    margin-top: 10px; */
     background-color: inherit;
     padding: 0;
 }
-
 .ua_color {
     background: linear-gradient(to bottom, #c3def7, #fff899) no-repeat; 
 }
-
 .white_color {
     background-color: white;
 }
-
 .titles {
     display: none;
     color: white;
@@ -267,33 +197,26 @@ p {
     margin: 10px;
     padding: 2px 10px 2px 71px;
 }
-
 .title_name,
 .title_content {
     width: 125px;
 }
-
 .title_created,
 .title_category,
 .title_dates {
     width: 95px;
 }
-
 .counter {
     margin-top: 40px;
 }
-
 .counter_name {
     display: none;
 }
-
 .counter_active {
-    width: 100%;
-    
+    width: 100%;   
 }
 .counter_archived {
     width: 100%;
-
 }
 .mob {
     width: 100%;
@@ -312,25 +235,16 @@ p {
         font-size: 16px;
         text-align: start;
         margin: 10px 15px 10px 0;
-
     }
-    .card_time {
-        width: 80px;
-        font-size: 16px;
-        margin-right: 15px;
-    }
-    .card_category {
+    .card_time,
+    .card_category,
+    .dates {
         width: 80px;
         font-size: 16px;
         margin-right: 15px;
     }
     .card_description {
         width: 110px;
-        font-size: 16px;
-        margin-right: 15px;
-    }
-    .dates {
-        width: 80px;
         font-size: 16px;
         margin-right: 15px;
     }
@@ -344,10 +258,9 @@ p {
         display: block;
         width: 300px;
     }
-    .counter_active {
-        width: 100px;
-    }
-    .counter_archived {
+    .counter_active,
+    .counter_archived,
+    .title_active  {
         width: 100px;
     }
     .mob_title {
@@ -359,10 +272,6 @@ p {
     .title_notecategory {
         width: 280px;
     }
-    .title_active {
-        width: 100px;
-    }
-
  }
  
  @media screen and (min-width: 1200px) {
@@ -376,19 +285,10 @@ p {
         width: 180px;
         font-size: 18px;
     }
-    .card_time {
-        width: 180px;
-        font-size: 18px;
-    }
-    .card_category {
-        width: 180px;
-        font-size: 18px;
-    }
-    .card_description {
-        width: 180px;
-        font-size: 18px;
-    }
-    .dates {
+    .card_time,
+    .card_category,
+    .card_description,
+    .dates  {
         width: 180px;
         font-size: 18px;
     }
@@ -408,5 +308,4 @@ p {
     .title_active {
         width: 100px;
     }
-
  }

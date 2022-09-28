@@ -1,6 +1,6 @@
 import addTodo from "./addTodo.js"; 
 import closeForm from "./closeForm.js";
-import { allTodos } from "./allTodos.js";
+import allTodos from "./allTodos.js";
 import showCategory from "./showCategory.js";
 import createCounter from "./createCounter.js";
 
@@ -32,6 +32,7 @@ export default function openModal ({id, name, description, category}) {
         const categIcon = selectedItemById.querySelector('.category_icon');
         const dates = selectedItemById.querySelector('.dates');
         const todoInArray = allTodos.find(todo => todo.id === id);
+
         const saveChanges = () => {
             selectedName.textContent = textareaName.value;
             selectedDescription.textContent = textareaDescription.value;
@@ -49,14 +50,17 @@ export default function openModal ({id, name, description, category}) {
             deleteButton.removeEventListener('click', deleteCard);
             closeForm();
         };
+
         const deleteCard = () => {
             selectedItemById.remove();
             const indexInArray = allTodos.indexOf(todoInArray);
             allTodos.splice(indexInArray, 1);
             createCounter();
+            localStorage.setItem('todos', JSON.stringify(allTodos));
             deleteButton.removeEventListener('click', deleteCard);
             closeForm();
         };
+        
         saveButton.addEventListener('click', saveChanges);
         deleteButton.addEventListener('click', deleteCard);
     } else {

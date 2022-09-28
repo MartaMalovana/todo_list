@@ -1,6 +1,6 @@
 import closeForm from "./closeForm.js";
 import openTodo from './openTodo.js';
-import { allTodos } from './allTodos.js';
+import allTodos from './allTodos.js';
 import createTodo from "./createTodo.js";
 import createButtons from "./createButtons.js";
 import createCounter from "./createCounter.js";
@@ -43,6 +43,7 @@ export default function addTodo (e) {
     };
     allTodos.push(newTodo);
     createCounter();
+    localStorage.setItem('todos', JSON.stringify(allTodos));
 
     buttonContainer.addEventListener('click', openTodo);
     saveButton.removeEventListener('click', addTodo);

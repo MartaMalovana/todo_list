@@ -1,4 +1,4 @@
-import { allTodos } from "./allTodos.js";
+import allTodos from "./allTodos.js";
 
 export default function countNotes () {
     let activeTask = 0;
