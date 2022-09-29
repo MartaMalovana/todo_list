@@ -50,14 +50,22 @@ p {
     padding: 3px;
 }
 .todo_form {
-    position: relative;
+    position: fixed;
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     display: none;
     flex-direction: column;
-    margin-top: 10px;
+    /* margin-top: 10px;
     margin-left: 25px;
-    margin-right: 25px;
-    padding: 5px;
-    height: 100vh;
+    margin-right: 25px; */
+    padding: 25px;
+    z-index: 99;
+    background-color: white;
+    
+    /* height: 100vh; */
 }
 .input {
     margin-bottom: 10px;
@@ -159,7 +167,7 @@ p {
 .cancel {
     width: 60px;
     position: absolute;
-    bottom: 80px;
+    bottom: 50px;
     background-color: inherit;
     border: none;
 }
@@ -181,7 +189,7 @@ p {
     display: none;
     position: absolute;
     right: 50%;
-    bottom: 80px;
+    bottom: 50px;
     transform: translate(50%, 0);
     background-color: inherit;
     border: none;
