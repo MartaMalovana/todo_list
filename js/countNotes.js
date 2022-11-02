@@ -1,18 +1,18 @@
 import allTodos from "./allTodos.js";
 
-export default function countNotes () {
+export default function countNotes() {
     let activeTask = 0;
-    let archivedTask= 0;
+    let archivedTask = 0;
     let activeRandom = 0;
     let archivedRandom = 0;
     let activeIdea = 0;
     let archivedIdea = 0;
-    
-    if(allTodos !== []) {
-        allTodos.map(({archived, category}) => {
-            if(archived) {
+
+    if (allTodos !== []) {
+        allTodos.map(({ archived, category }) => {
+            if (archived) {
                 switch (category) {
-                    case 'task': 
+                    case 'task':
                         archivedTask += 1;
                         break;
                     case 'random_thought':
@@ -24,7 +24,7 @@ export default function countNotes () {
                 };
             } else {
                 switch (category) {
-                    case 'task': 
+                    case 'task':
                         activeTask += 1;
                         break;
                     case 'random_thought':
@@ -37,5 +37,5 @@ export default function countNotes () {
             };
         });
     };
-    return {activeTask, archivedTask, activeRandom, archivedRandom, activeIdea, archivedIdea};
+    return { activeTask, archivedTask, activeRandom, archivedRandom, activeIdea, archivedIdea };
 };

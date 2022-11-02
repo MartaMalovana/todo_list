@@ -4,18 +4,18 @@ import archiveTodo from './archiveTodo.js';
 import closeForm from './closeForm.js';
 import createCounter from "./createCounter.js";
 
-export default function openTodo (e) {
+export default function openTodo(e) {
     const selectedCard = e.currentTarget.parentElement;
     const selectedTodo = allTodos.find(todo => todo.id.toString() === selectedCard.id);
-    if(e.target.classList.contains('change')) {
-        openModal(selectedTodo);  
+    if (e.target.classList.contains('change')) {
+        openModal(selectedTodo);
     };
-    if(e.target.classList.contains('archive')) {
-        archiveTodo(selectedTodo);  
+    if (e.target.classList.contains('archive')) {
+        archiveTodo(selectedTodo);
     };
-    if(e.target.classList.contains('delete')) {
+    if (e.target.classList.contains('delete')) {
         const answer = confirm('Delete this note?');
-        if(!answer) {
+        if (!answer) {
             return;
         };
         const todoToDelete = document.getElementById(`${selectedCard.id}`);

@@ -11,20 +11,21 @@ const inputName = document.querySelector('.todo_name');
 const inputDescription = document.querySelector('.todo_description');
 const category = document.querySelector('#category');
 
-export default function addTodo (e) {
+export default function addTodo(e) {
     e.preventDefault();
-    const newId = Math.round(Math.random()*100000).toString();
-    const todoTime = `${new Date().toLocaleString('en-US', {month: "long"})} ${new Date().getDate()}, ${new Date().getFullYear()}`;
+    const newId = Math.round(Math.random() * 100000).toString();
+    const todoTime = `${new Date().toLocaleString('en-US', { month: "long" })} ${new Date().getDate()}, ${new Date().getFullYear()}`;
     const reg = /[0-9]{1,2}[\/]{1}[0-9]{1,2}[\/]{1}[0-9]{4}/g;
     const datesInDescription = inputDescription.value.match(reg);
-    
+
     const card = createTodo({
-        id: newId, 
-        name: inputName.value, 
-        description: inputDescription.value, 
+        id: newId,
+        name: inputName.value,
+        description: inputDescription.value,
         time: todoTime,
         category: category.value,
-        dates: datesInDescription});
+        dates: datesInDescription
+    });
 
     const buttonContainer = createButtons();
 
@@ -48,5 +49,5 @@ export default function addTodo (e) {
     buttonContainer.addEventListener('click', openTodo);
     saveButton.removeEventListener('click', addTodo);
     closeForm();
-    
+
 }

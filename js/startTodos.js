@@ -5,8 +5,8 @@ import openTodo from './openTodo.js';
 
 const todosDom = document.querySelector('.todos');
 
-export default function startTodos () {
-    const activeTodos = allTodos.filter(({archived}) => archived === false);
+export default function startTodos() {
+    const activeTodos = allTodos.filter(({ archived }) => archived === false);
 
     activeTodos.map(todo => {
         const card = createTodo(todo);

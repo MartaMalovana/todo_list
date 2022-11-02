@@ -1,4 +1,4 @@
-import addTodo from "./addTodo.js"; 
+import addTodo from "./addTodo.js";
 import closeForm from "./closeForm.js";
 import allTodos from "./allTodos.js";
 import showCategory from "./showCategory.js";
@@ -14,14 +14,14 @@ const deleteButton = document.querySelector('.delete_todo');
 const categ = document.querySelector('#category');
 const archived = document.querySelector('.archived');
 
-export default function openModal ({id, name, description, category}) {
+export default function openModal({ id, name, description, category }) {
     deleteButton.style.display = 'block';
     // opens modal to create new todo
     form.style.display = 'flex';
     // hide button that opens modal
     modalButton.style.display = 'none';
     archived.style.display = 'none';
-    if(id) {
+    if (id) {
         categ.value = category;
         textareaName.value = name;
         textareaDescription.value = description;
@@ -38,7 +38,7 @@ export default function openModal ({id, name, description, category}) {
             selectedDescription.textContent = textareaDescription.value;
             const changeCategory = showCategory(categ.value);
             selectedCateg.textContent = changeCategory.cat_text;
-            categIcon.innerHTML = `<svg class="cat_icon"><use href="./icons.svg#${changeCategory.icon_name}"></use></svg>`;
+            categIcon.innerHTML = `<svg class="cat_icon"><use href="../css/icons.svg#${changeCategory.icon_name}"></use></svg>`;
             const reg = /[0-9]{1,2}[\/]{1}[0-9]{1,2}[\/]{1}[0-9]{4}/g;
             const datesInDescription = textareaDescription.value.match(reg);
             dates.textContent = datesInDescription ? datesInDescription.join(', ') : null;
@@ -60,7 +60,7 @@ export default function openModal ({id, name, description, category}) {
             deleteButton.removeEventListener('click', deleteCard);
             closeForm();
         };
-        
+
         saveButton.addEventListener('click', saveChanges);
         deleteButton.addEventListener('click', deleteCard);
     } else {

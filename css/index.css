@@ -1,9 +1,12 @@
-html, body {
+html,
+body {
     height: 100%;
 }
+
 p {
     margin: 0;
 }
+
 .container {
     display: block;
     width: 365px;
@@ -11,11 +14,13 @@ p {
     margin-right: auto;
     margin-left: auto;
 }
+
 .top_buttons {
     display: flex;
     justify-content: space-between;
     margin: 20px 10px;
 }
+
 .add_todo {
     display: block;
     margin-left: auto;
@@ -25,6 +30,7 @@ p {
     border-radius: 5px;
     border: 1px solid black;
 }
+
 .archived {
     width: 30px;
     height: 30px;
@@ -33,6 +39,7 @@ p {
     background-color: inherit;
     margin-left: auto;
 }
+
 .icon,
 .cat_icon {
     display: flex;
@@ -40,45 +47,44 @@ p {
     padding: 0;
     width: 100%;
     height: 100%;
-    stroke: gray;
     object-position: top left;
-
 }
+
 .cat_icon {
     fill: white;
     stroke: white;
     padding: 3px;
 }
+
 .todo_form {
     position: fixed;
-    /* position: relative; */
+    display: none;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: none;
     flex-direction: column;
-    /* margin-top: 10px;
-    margin-left: 25px;
-    margin-right: 25px; */
     padding: 25px;
     z-index: 99;
     background-color: white;
-    
-    /* height: 100vh; */
 }
+
 .input {
     margin-bottom: 10px;
 }
+
 .category {
     display: flex;
 }
+
 #category {
     margin-bottom: 15px;
 }
+
 .category_label {
     margin-right: 10px;
 }
+
 .cat_icon {
     display: flex;
     align-items: center;
@@ -88,6 +94,7 @@ p {
     border-radius: 50%;
     background-color: grey;
 }
+
 .card {
     position: relative;
     display: flex;
@@ -96,8 +103,9 @@ p {
     margin: 0 10px 10px 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: 	#e5e6eb;
+    background-color: #e5e6eb;
 }
+
 .card_name {
     text-align: center;
     font-size: 24px;
@@ -108,6 +116,7 @@ p {
     text-overflow: ellipsis;
     margin: 10px 0;
 }
+
 .card_description {
     width: 100%;
     overflow: hidden;
@@ -116,6 +125,7 @@ p {
     font-size: 18px;
     color: #6e6d6d;
 }
+
 .card_time,
 .card_category,
 .dates {
@@ -123,94 +133,111 @@ p {
     font-size: 18px;
     color: #6e6d6d;
 }
+
 .button_container {
     display: flex;
     margin-top: 10px;
 }
+
 .change,
 .archive,
 .unarchive,
 .return,
-.delete  {
+.delete {
     width: 30px;
     height: 30px;
     fill: #6e6d6d;
     stroke: #6e6d6d;
 }
+
 .change {
     width: 23px;
     height: 23px;
 }
+
 .delete {
     width: 28px;
     height: 28px;
 
 }
+
 .button {
     border: none;
     background-color: inherit;
     padding: 0;
     margin: 0 2px;
 }
+
 .return {
     display: none;
     width: 30px;
     margin-right: 3px;
 }
+
 .delete {
     width: 30px;
 }
+
 .todo_description {
     height: 62%;
 }
+
 .save,
 .cancel {
-    width: 60px;
     position: absolute;
+    width: 60px;
     bottom: 50px;
     background-color: inherit;
     border: none;
 }
+
 .save {
-    right: 10px;
     width: 40px;
     height: 40px;
+    right: 10px;
 }
+
 .cancel {
+    width: 40px;
+    height: 40px;
     left: 10px;
     stroke: black;
-    width: 40px;
-    height: 40px;
 }
-.checkbox:checked + .card_name {
+
+.checkbox:checked+.card_name {
     text-decoration: line-through;
 }
+
 .delete_todo {
     display: none;
     position: absolute;
+    width: 40px;
+    height: 40px;
     right: 50%;
     bottom: 50px;
     transform: translate(50%, 0);
     background-color: inherit;
     border: none;
     fill: black;
-    width: 40px;
-    height: 40px;
 }
+
 .yellow_blue {
-    border-radius: 50%;
-    border-width: 0px;
     width: 30px;
     height: 30px;
-    background-color: inherit;
     padding: 0;
+    border-radius: 50%;
+    border-width: 0px;
+    background-color: inherit;
 }
+
 .ua_color {
-    background: linear-gradient(to bottom, #c3def7, #fff899) no-repeat; 
+    background-color: rgba(174, 179, 175, 1);
 }
+
 .white_color {
     background-color: white;
 }
+
 .titles {
     display: none;
     color: white;
@@ -218,51 +245,63 @@ p {
     margin: 10px;
     padding: 2px 10px 2px 71px;
 }
+
 .title_name,
 .title_content {
     width: 125px;
 }
+
 .title_created,
 .title_category,
 .title_dates {
     width: 95px;
 }
+
 .counter {
     margin-top: 40px;
 }
+
 .counter_name {
     display: none;
 }
+
 .counter_active {
-    width: 100%;   
+    width: 100%;
 }
+
 .counter_archived {
     width: 100%;
 }
+
 .mob {
-    width: 100%;
     display: flex;
     align-items: flex-start;
+    width: 100%;
 }
+
 .statistics {
     display: flex;
-    margin-top: 50px;
     flex-direction: row;
     justify-content: center;
-}    
+    margin-top: 50px;
+}
+
 @media screen and (min-width: 765px) {
     .container {
-     width: 765px;
+        width: 765px;
     }
+
     .card {
         flex-direction: row;
     }
+
     .card_name {
         width: 110px;
         font-size: 16px;
         text-align: start;
         margin: 10px 15px 10px 0;
     }
+
     .card_time,
     .card_category,
     .dates {
@@ -270,63 +309,77 @@ p {
         font-size: 16px;
         margin-right: 15px;
     }
+
     .card_description {
         width: 110px;
         font-size: 16px;
         margin-right: 15px;
     }
+
     .category_icon {
         margin-right: 15px;
     }
+
     .titles {
         display: flex;
     }
+
     .counter_name {
         display: block;
         width: 300px;
     }
+
     .counter_active,
     .counter_archived,
-    .title_active  {
+    .title_active {
         width: 100px;
     }
+
     .mob_title {
         display: none;
     }
+
     .mob {
         width: auto;
     }
+
     .title_notecategory {
         width: 280px;
     }
+
     .button_container {
         margin-left: auto;
     }
+
     .statistics {
         margin-top: 0;
         flex-direction: column;
         justify-content: flex-start;
-    }    
- }
- 
- @media screen and (min-width: 1200px) {
-    .container {
-     width: 1200px;
     }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+
     .card {
         flex-direction: row;
     }
+
     .card_name {
         width: 180px;
         font-size: 18px;
     }
+
     .card_time,
     .card_category,
     .card_description,
-    .dates  {
+    .dates {
         width: 180px;
         font-size: 18px;
     }
+
     .title_name,
     .title_created,
     .title_category,
@@ -334,13 +387,16 @@ p {
     .title_dates {
         width: 195px;
     }
+
     .counter_name {
         width: 450px;
     }
+
     .title_notecategory {
         width: 430px;
     }
+
     .title_active {
         width: 100px;
     }
- }
+}

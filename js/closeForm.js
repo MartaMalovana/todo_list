@@ -5,7 +5,7 @@ const cancelButton = document.querySelector('.cancel');
 const modalButton = document.querySelector('.add_todo');
 const archived = document.querySelector('.archived');
 
-export default function closeForm () {
+export default function closeForm() {
     inputName.value = '';
     inputDescription.value = '';
     form.style.display = 'none';

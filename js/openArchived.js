@@ -10,7 +10,7 @@ const buttonArchived = document.querySelector('.archived');
 const createCardButton = document.querySelector('.add_todo');
 const returnButton = document.querySelector('.return');
 
-export default function openArchived () {
+export default function openArchived() {
     archived.style.display = 'block';
     buttonArchived.style.display = 'none';
     createCardButton.style.display = 'none';
@@ -19,16 +19,16 @@ export default function openArchived () {
     todos.style.display = 'none';
     const archivedInDom = document.createElement('div');
     archivedInDom.classList.add('archTodos');
-    
+
     archivedTodos.map(todo => {
-        if(document.getElementById(`${todo.id}`)) {
+        if (document.getElementById(`${todo.id}`)) {
             return;
         };
         const archivedTodo = createTodo(todo);
         const unarchiveButton = document.createElement('button');
         unarchiveButton.type = 'button';
         unarchiveButton.classList.add('button');
-        unarchiveButton.innerHTML = `<svg class="icon unarchive"><use id='unarchive' href="./icons.svg#unarchive"></use></svg>`;
+        unarchiveButton.innerHTML = `<svg class="icon unarchive"><use id='unarchive' href="../css/icons.svg#unarchive"></use></svg>`;
         archivedTodo.append(unarchiveButton);
         archivedInDom.append(archivedTodo);
         archived.append(archivedInDom);
@@ -42,7 +42,7 @@ export default function openArchived () {
             const selectedTodoDom = document.getElementById(`${todo.id}`);
             selectedTodoDom.remove();
             const returnedTodo = createTodo(selectedTodo);
-            
+
             const buttonContainer = createButtons();
             buttonContainer.addEventListener('click', openTodo);
             returnedTodo.append(buttonContainer);
@@ -56,7 +56,7 @@ export default function openArchived () {
             archived.style.display = 'none';
             returnButton.style.display = 'none';
             buttonArchived.style.display = 'block';
-            createCardButton.style.display = 'block';    
+            createCardButton.style.display = 'block';
         } catch (error) {
             console.log(error);
         };

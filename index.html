@@ -1,113 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
     <container class="container">
-        <div class="top_buttons">
-            <button class="yellow_blue">
-                <svg class="icon"> <use href="./icons.svg#paint"></use></svg> 
-            </button>
-            <button class="archived" type="button">
-                <svg class="icon"> <use href="./icons.svg#archive"></use></svg>     
-            </button>
-            <button class="button" type="button">
-                <svg class="icon return"> <use  href="./icons.svg#return"></use></svg>     
-            </button>
-        </div>
-
-        <div name="todo_form" class="todo_form">
-            <div class="category">
-                <label for="category" class="category_label"> Category</label>
-                <select id="category" name="category">
-                    <option value="task">Task</option>
-                    <option value="random_thought">Random Thought</option>
-                    <option value="idea">Idea</option>
-                </select>
-            </div>            
-            <textarea type="text" name="todo_name" class="todo_name input" placeholder="Title"></textarea>
-            <textarea type="text" name="todo_description" class="todo_description input"></textarea>
-            <button type="button" class="save">
-                <svg class="icon"> <use href="./icons.svg#save"></use></svg>
-            </button>
-            <button type="button" class="cancel">
-                <svg class="icon"> <use href="./icons.svg#cancel"></use></svg>
-            </button>
-            <button type="button" class="delete_todo">
-                <svg class="icon"> <use href="./icons.svg#delete"></use></svg>
-            </button>
-        </div>
-
-        <div class="titles">
-            <p class="title_name">Name</p>
-            <p class="title_created">Created</p>
-            <p class="title_category">Category</p>
-            <p class="title_content">Content</p>
-            <p class="title_dates">Dates</p>
-        </div>
-        <div class="todos"></div>
-        <div class="archived_container"></div>
-        <button type="button" class="add_todo">
-            Create Note
+      <div class="top_buttons">
+        <button class="yellow_blue">
+          <svg class="icon"><use href="./css/icons.svg#paint"></use></svg>
         </button>
-        <div class="statistics">
-            <div class="titles counter">
-                <p class="title_notecategory">Note Category</p>
-                <p class="title_active">Active</p>
-                <p class="title_archived">Archived</p>
-            </div>
-            <div class="card">
-                <span class="category_icon">
-                    <svg class="cat_icon"><use href="./icons.svg#task"></use></svg>
-                </span>
-                <p class="counter_name">Task</p>
-                <div class="mob">
-                    <span class="mob_title">Active: </span>
-                    <p class="counter_active act_task">0</p>
-                </div>
-                <div class="mob">
-                    <span class="mob_title">Archived: </span>
-                    <p class="counter_archived arch_task">0</p>
-                </div>
-            </div>
-            <div class="card">
-                <span class="category_icon">
-                    <svg class="cat_icon"><use href="./icons.svg#thought"></use></svg>
-                </span>
-                <p class="counter_name">Random Thought</p>
-                <div class="mob">
-                    <span class="mob_title">Active: </span>
-                    <p class="counter_active act_random">0</p>    
-                </div>
-                <div class="mob">
-                    <span class="mob_title">Archived: </span>
-                    <p class="counter_archived arch_random">0</p>
-                </div>
-            </div>
-            <div class="card">
-                <span class="category_icon">
-                    <svg class="cat_icon"><use href="./icons.svg#idea"></use></svg>
-                </span>
-                <p class="counter_name">Idea</p>
-                <div class="mob">
-                    <span class="mob_title">Active: </span>
-                    <p class="counter_active act_idea">0</p>
-                </div>
-                <div class="mob">
-                    <span class="mob_title">Archived: </span>
-                    <p class="counter_archived arch_idea">0</p>
-                </div>  
-            </div>
-    
+        <button class="archived" type="button">
+          <svg class="icon"><use href="./css/icons.svg#archive"></use></svg>
+        </button>
+        <button class="button" type="button">
+          <svg class="icon return">
+            <use href="./css/icons.svg#return"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div name="todo_form" class="todo_form">
+        <div class="category">
+          <label for="category" class="category_label"> Category</label>
+          <select id="category" name="category">
+            <option value="task">Task</option>
+            <option value="random_thought">Random Thought</option>
+            <option value="idea">Idea</option>
+          </select>
         </div>
+        <textarea
+          type="text"
+          name="todo_name"
+          class="todo_name input"
+          placeholder="Title"
+        ></textarea>
+        <textarea
+          type="text"
+          name="todo_description"
+          class="todo_description input"
+        ></textarea>
+        <button type="button" class="save">
+          <svg class="icon"><use href="./css/icons.svg#save"></use></svg>
+        </button>
+        <button type="button" class="cancel">
+          <svg class="icon"><use href="./css/icons.svg#cancel"></use></svg>
+        </button>
+        <button type="button" class="delete_todo">
+          <svg class="icon"><use href="./css/icons.svg#delete"></use></svg>
+        </button>
+      </div>
+
+      <div class="titles">
+        <p class="title_name">Name</p>
+        <p class="title_created">Created</p>
+        <p class="title_category">Category</p>
+        <p class="title_content">Content</p>
+        <p class="title_dates">Dates</p>
+      </div>
+      <div class="todos"></div>
+      <div class="archived_container"></div>
+      <button type="button" class="add_todo">Create Note</button>
+      <div class="statistics">
+        <div class="titles counter">
+          <p class="title_notecategory">Note Category</p>
+          <p class="title_active">Active</p>
+          <p class="title_archived">Archived</p>
+        </div>
+        <div class="card">
+          <span class="category_icon">
+            <svg class="cat_icon"><use href="./css/icons.svg#task"></use></svg>
+          </span>
+          <p class="counter_name">Task</p>
+          <div class="mob">
+            <span class="mob_title">Active: </span>
+            <p class="counter_active act_task">0</p>
+          </div>
+          <div class="mob">
+            <span class="mob_title">Archived: </span>
+            <p class="counter_archived arch_task">0</p>
+          </div>
+        </div>
+        <div class="card">
+          <span class="category_icon">
+            <svg class="cat_icon">
+              <use href="./css/icons.svg#thought"></use>
+            </svg>
+          </span>
+          <p class="counter_name">Random Thought</p>
+          <div class="mob">
+            <span class="mob_title">Active: </span>
+            <p class="counter_active act_random">0</p>
+          </div>
+          <div class="mob">
+            <span class="mob_title">Archived: </span>
+            <p class="counter_archived arch_random">0</p>
+          </div>
+        </div>
+        <div class="card">
+          <span class="category_icon">
+            <svg class="cat_icon"><use href="./css/icons.svg#idea"></use></svg>
+          </span>
+          <p class="counter_name">Idea</p>
+          <div class="mob">
+            <span class="mob_title">Active: </span>
+            <p class="counter_active act_idea">0</p>
+          </div>
+          <div class="mob">
+            <span class="mob_title">Archived: </span>
+            <p class="counter_archived arch_idea">0</p>
+          </div>
+        </div>
+      </div>
     </container>
 
     <script src="./index.js" type="module"></script>
-    </script>
-</body>
+  </body>
 </html>

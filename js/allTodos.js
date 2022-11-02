@@ -1,7 +1,7 @@
 let allTodos = [];
 
 const todosFromLS = localStorage.getItem('todos');
-if(todosFromLS) {
+if (todosFromLS) {
     allTodos = JSON.parse(todosFromLS);
 };
 
