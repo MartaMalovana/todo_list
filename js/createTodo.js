@@ -25,7 +25,7 @@ export default function createTodo({ id, name, description, time, category, date
 
     const cat_icon = document.createElement('span');
     cat_icon.classList.add('category_icon');
-    cat_icon.innerHTML = `<svg class="cat_icon"><use href="../css/icons.svg#${result.icon_name}"></use></svg>`;
+    cat_icon.innerHTML = `<svg class="cat_icon"><use href="/css/icons.svg#${result.icon_name}"></use></svg>`;
 
     const datesArray = document.createElement('p');
     datesArray.classList.add('dates');
