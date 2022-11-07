@@ -38,7 +38,7 @@ export default function openModal({ id, name, description, category }) {
             selectedDescription.textContent = textareaDescription.value;
             const changeCategory = showCategory(categ.value);
             selectedCateg.textContent = changeCategory.cat_text;
-            categIcon.innerHTML = `<svg class="cat_icon"><use href="../css/icons.svg#${changeCategory.icon_name}"></use></svg>`;
+            categIcon.innerHTML = `<svg class="cat_icon"><use href="css/icons.svg#${changeCategory.icon_name}"></use></svg>`;
             const reg = /[0-9]{1,2}[\/]{1}[0-9]{1,2}[\/]{1}[0-9]{4}/g;
             const datesInDescription = textareaDescription.value.match(reg);
             dates.textContent = datesInDescription ? datesInDescription.join(', ') : null;
